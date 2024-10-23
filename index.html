@@ -3,10 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FuturED : Future of Event Detection 2024 </title>
+    <title>FuturED : Future of Event Detection 2024 </title></h1>
     <!-- Link to CSS Stylesheet -->
     <!--<link rel="stylesheet" href="styles.css">-->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <style>
+        /* Container for all speakers */
+        .speakercontainer {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Individual speaker styling */
+        .speaker {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            align-items: flex-start;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Image styling */
+        .speaker img {
+            width: 200px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        /* Abstract section next to the image */
+        .abstract {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bio-content {
+            display: none;
+            margin-top: 10px;
+        }
+
+        /* Expandable bio section */
+        .bio-content p {
+            margin: 5px 0;
+        }
+
+        /* Button-style for the clickable speaker name */
+        .bio-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+    </style>
+    <style>
+        /* Container for the organizers */
+        .organizers-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columns for 4 organizers */
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Individual organizer block */
+        .organizer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Organizer name */
+        .organizer h3 {
+            margin: 0 0 10px;
+            text-align: center;
+        }
+
+        /* Organizer image */
+        .organizer img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 15px;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .organizers-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .organizers-container {
+                grid-template-columns: 1fr; /* 1 column on very small screens */
+            }
+        }
+    </style>
+
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -24,25 +137,26 @@
                             <a href="#">Home</a>
                         </li>
                         <li>
-                            <a href="#cfp">Call For Papers</a>
+                            <a href="#cfp">Workshop Description</a>
+                        </li>
+                        <li>
+                            <a href="#schedule">Schedule</a>
+                        </li>
+                        <li>
+                            <a href="#speakers">Speakers</a>
+                        </li>
+                        
+                        <li>
+                            <a href="#organizers">Organizers</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
                         </li>
                         <li>
                             <a href="#dates">Important Dates</a>
                         </li>
                         <li>
                             <a href="#submission-info">Submission Information</a>
-                        </li>
-                        <li>
-                            <a href="#speakers">Speakers</a>
-                        </li>
-                        <li>
-                            <a href="#schedule">Schedule</a>
-                        </li>
-                        <li>
-                            <a href="#organizers">Organizers</a>
-                        </li>
-                        <li>
-                            <a href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -61,7 +175,7 @@
     
     <section id="cfp">
         <div class="container">
-            <h2>Call For Papers</h2>
+            <h2>Workshop Description</h2>
             <p>
                 In recent years, there has been a significant increase in the amount of publicly-generated digital data. One prominent category of this data, and arguably the largest in terms of daily generation, pertains to various real-world events, ranging from natural disasters to political occurrences to sports events. Detecting these events serves various crucial purposes, including early warning systems, emergency response, situational awareness, tracking public health trends, and understanding societal shifts, among others. However, automatic real-time event detection presents intriguing challenges, primarily stemming from the characteristics of the data. These challenges include the diversity of public online data (multimodal nature), the rapid pace at which data is produced (velocity), the sheer volume of data generated, and the reliability of the data (veracity).  Moreover, the recent advancements in powerful Large Language Models (LLMs) and Generative AI Systems offer new opportunities to revise event detection pipelines, enabling novel approaches and applications across various domains.  The workshop focuses on:
 
@@ -72,7 +186,7 @@
                     <li><b>Theory to Application</b>: Finally, this workshop will emphasize how event detection technology can be used in real-world applications.</li>
                 </ul>
 
-                We will solicit novel papers, including, but not limited to the following topics: 
+                We solicited novel papers, including, but not limited to the following topics: 
                 <ul>
                     <li>Position and opinion papers on the state and future of event detection</li>
                     <li>Retrospectives</li>
@@ -93,10 +207,197 @@
                     <li>Usability of event detection systems</li>
                     <li>Datasets for Event Detection</li>
                 </ul>
+
+                The workshop is colocated with EMNLP, 2024 held at Miami, Fl.
             </p>
         </div>
     </section>
+    
+    <section id="schedule">
+        <div class="container">
+            <h2>Schedule (November 15th, 2024) (Tentative)</h2>
+            <table class="table table-striped table-hover">
+                <tr>
+                    <td>9 - 9:15 AM </td>
+                    <td>Opening Remarks</td>
+                </tr>
+                <tr>
+                    <td>9:15 - 10:00 AM</td>
+                    <td>Keynote: Heng Ji (UIUC)</td>
+                </tr>
+                <tr>
+                    <td>10:00 - 10:30 AM</td>
+                    <td>
+                        DEGREE2 : Efficient Extraction of Multiple Events Using Language Models </br>
+                        An Incremental Clustering Baseline for Event Detection on Twitter
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>10:30 - 11:00 AM</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td>11:00 - 12:30 PM</td>
+                    <td>
+                        BERTrend: Neural Topic Modeling for Emerging Trends Detection </br>
+                        MUMOSA, Interactive Dashboard for MUlti-MOdal Situation Awareness  </br>
+                        A Comprehensive Survey on Document-Level Information Extraction  </br>
+                        Generative Approaches to Event Extraction: Survey and Outlook  </br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>12:30 PM - 14:15 PM</td>
+                    <td>Lunch</td>
+                </tr>
+                <tr>
+                    <td>14:15 PM - 15:00 PM</td>
+                    <td>Keynote: Lise St. Denis</td>
+                </tr>
+                <tr>
+                    <td>15:00 PM - 15:30 PM</td>
+                    <td>
+                        When and Where Did it Happen?  An Encoder-Decoder Model to Identify Scenario Context </br>
+                        Reasoning and Tools for Human-Level Forecasting </br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>15:30 PM - 16:00 PM</td>
+                    <td>Coffee Break</td>
+                </tr>
+                <tr>
+                    <td>16:00 PM - 16:20 PM</td>
+                    <td>
+                        Grounding Partially-Defined Events in Multimodal Data
+                    </td>
+                </tr>
+                <tr>
+                    <td>16:20 PM - 17:00 PM</td>
+                    <td>Panel</td>
+                </tr>
+                <tr>
+                    <td>17:00 PM - 17:15 PM</td>
+                    <td>Concluding Remarks</td>
+                </tr>
+            </table>
+        </div>
+    </section>
 
+    
+    <section id="speakers">
+        <div class="container">
+            <h2>Keynote Speakers</h2>
+        </div>
+        <div class="speakercontainer">
+            <div class="speaker">
+                <img src="assets/images/hengji.jpeg" alt="Speaker 1">
+                <div class="abstract">
+                    <h3><a href="https://blender.cs.illinois.edu/hengji.html">Heng Ji</a></h3>
+                    <h5>UIUC</h5>
+                    <p><strong>Title:</strong>Event Detection: Something Olde and Something New</p>
+                    <p>
+                        When the first event detection shared task was launched at the Message Understanding 
+                        Conference (MUC-5) in 1993, building a system to detect just one event type in one language 
+                        took a month of development. Thirty years later, we’ve seen remarkable progress: modern event 
+                        detection systems can identify over 3,000 event types across hundreds of languages and multiple data modalities—including text, speech, images, and video. These systems now offer much higher accuracy, coverage, and portability, all at a fraction of the original cost, pushing the 
+                        boundaries of what’s possible in areas like disaster management, business analytics, decision 
+                        support, and beyond. While these advancements are impressive, the exciting potential lies ahead.
+
+                        In this talk, I will not only revisit the key techniques that have driven event detection forward but
+                        also explore what the next decades could hold in the era of large language models (LLMs). I will
+                        propose several PhD dissertation-worthy research directions that could shape the future of event detection, such as never-ending event knowledge base construction, event-based LLM
+                        knowledge updating, corpus-level complex event detection and analysis, multimodal event
+                        detection and knowledge integration, and emerging applications in situation understanding,
+                        hypothesis generation, simulation, and predictive analytics.
+                    </p>
+                    <button class="bio-button" onclick="toggleBio('bio1')">Bio</button>
+                    <div class="bio-content" id="bio1">
+                        <p>
+                        Heng Ji is a professor at Siebel School of Computing and Data Science, and an affiliated faculty
+                        member at Electrical and Computer Engineering Department, Coordinated Science Laboratory,
+                        and Carl R. Woese Institute for Genomic Biology of University of Illinois Urbana-Champaign.
+                        She is an Amazon Scholar. She is the Founding Director of Amazon-Illinois Center on AI for
+                        Interactive Conversational Experiences (AICE). She received her B.A. and M. A. in
+                        Computational Linguistics from Tsinghua University, and her M.S. and Ph.D. in Computer
+                        Science from New York University. Her research interests focus on Natural Language
+                        Processing, especially on Multimedia Multilingual Information Extraction, Knowledge-enhanced
+                        Large Language Models and Vision-Language Models, and AI for Science. The awards she
+                        received include Outstanding Paper Award at ACL2024, two Outstanding Paper Awards at
+                        NAACL2024, “Young Scientist” by the World Laureates Association in 2023 and 2024, “Young Scientist” and a member of the Global Future Council on the Future of Computing by the World Economic Forum in 2016 and 2017, “Women Leaders of Conversational AI” (Class of 2023) by
+                        Project Voice, “AI’s 10 to Watch” Award by IEEE Intelligent Systems in 2013, NSF CAREER award in 2009, “Best of ICDM2013” paper award, “Best of SDM2013” paper award, ACL2020 Best Demo Paper Award, NAACL2021 Best Demo Paper Award, Google Research Award in 2009 and 2014, IBM Watson Faculty Award in 2012 and 2014 and Bosch Research Award in2014-2018. She was invited to testify to the U.S. House Cybersecurity, Data Analytics, &amp; IT Committee as an AI expert in 2023. She was invited by the Secretary of the U.S. Air Force and AFRL to join Air Force Data Analytics Expert Panel to inform the Air Force Strategy 2030, and invited to speak at the Federal Information Integrity R&D Interagency Working Group (IIRD IWG) briefing in 2023. She is the lead of many multi-institution projects and tasks, including the U.S. ARL projects on information fusion and knowledge networks construction, DARPA ECOLE MIRACLE team, DARPA KAIROS RESIN team and DARPA DEFT Tinker Bell team. She has coordinated the NIST TAC Knowledge Base Population task 2010-2020. She served as the associate editor for IEEE/ACM Transaction on Audio, Speech, and Language Processing, and the Program Committee Co-Chair of many conferences including NAACL-HLT2018 and AACL-IJCNLP2022. She was elected as the North American Chapter of the Association for Computational Linguistics (NAACL) secretary 2020-2023. Her research has been widely supported by the U.S. government agencies (DARPA, NSF, DoE, ARL, IARPA, AFRL, DHS) and industry (Amazon, Google, Bosch, IBM, Disney).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Speaker 2 -->
+            <div class="speaker">
+                <img src="assets/images/lise.jpg" alt="Speaker 1">
+                <div class="abstract">
+                    <h3><a href="https://earthlab.colorado.edu/our-team/lise-ann-st-denis">Lise Ann St. Denis</a></h3>
+                    <h5>University of Colorado, Boulder</h5>
+                    <p><strong>Title:</strong>Detecting pivotal shifts during complex wildfires: hazards, incident response, community impacts and community response
+                    </p>
+                    <p>
+                        The impacts of wildfires are intensifying in the United States due to a combination of a warming climate, policies and practices contributing to a long-term buildup of fuels on the landscape and housing practices that continue to put more people in harm’s way. Teasing apart and making sense of these contributing factors poses numerous challenges for researchers, land managers, and incident management organizations struggling to assess both our current situation and viable paths forward. Recent advances in natural language and data synthesis techniques are a critical component of making sense of this critical moment in time.
+                        In this talk I will present current research as part of the CU Earth Lab Wildfire Research Team and collaboration with the USDA Forest Service Wildfire Risk Management Science Team, Human Dimensions Lab to make progress in some of the most critical areas.  
+                    </p>
+                    <button class="bio-button" onclick="toggleBio('bio2')">Bio</button>
+                    <div class="bio-content" id="bio2">
+                        <p>
+                        Lise is a research scientist at Earth Lab responsible for the Global Social Sensing Project, a research initiative to develop datasets Earth scale related to the societal impact and societal disruption of natural hazard events for use in Earth Sciences, natural hazards research, and for real-time response applications.
+                        Lise has a multidisciplinary background in computer science, data science, human-centered design, crisis informatics, emergency response, and natural hazards research. She holds degrees in Computer Science, Human-centered computing and brings over a decade of industry software design and development experience to her academic research role. 
+                        Her doctoral research focused on the challenges of integrating social media into formal emergency response and as part of this research participated in over forty emergency response activations with the Virtual Operational Support Team (VOST) community. Her current research extends that knowledge into the Earth Analytics domain, finding new methods for capturing information related to emergency response and societal impacts at scale for use in Earth sciences and natural hazards research. Related work includes development of the ICS-209-PLUS dataset: a geo-spatial, research grade dataset combining daily snapshots of incident response, hazard characteristics and societal impacts. Design of a neural net classifier for organizing social media for emergency response and natural hazards research.
+                        In her free time, Lise loves using her art and design skills, spending time with family and hiking in Boulder County open space with her dogs. She is still an active member of the VOST community and co-lead for the PNWVOST Team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="organizers">
+        <div class="container text-center">
+            <div class="row align-items-start">
+                <div class="span12">
+                    <h2>Organizers</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="organizers-container">
+            <!-- Organizer 1 -->
+            <div class="organizer">
+                <h3><a href="">Joel Tetreault</a></h3>
+                <h5>Dataminr Inc.</h5>
+                <img src="assets/images/joel.jpg" alt="Organizer 1">
+            </div>
+    
+            <!-- Organizer 2 -->
+            <div class="organizer">
+                <h3><a href="https://ix.cs.uoregon.edu/~thien/">Thien Huu Nguyen</a></h3>
+                <h5>University of Oregon</h5>
+                <img src="assets/images/thien.png" alt="Organizer 2">
+            </div>
+    
+            <!-- Organizer 3 -->
+            <div class="organizer">
+                <h3><a href="https://sites.google.com/site/hemanklamba">Hemank Lamba</a></h3>
+                <h5>Dataminr Inc.</h5>
+                <img src="assets/images/hemank.jpg" alt="Organizer 3">
+            </div>
+    
+            <!-- Organizer 4 -->
+            <div class="organizer">
+                <h3><a href="https://amandaleehughes.com/">Amanda Hughes</a></h3>
+                <h5>Bigham Young University</h5>
+                <img src="assets/images/amanda.jpg" alt="Organizer 4">
+            </div>
+        </div>
+    </section>
+
+    
     <section id="dates">
         <div class="container">
             <h2>Important Dates</h2>
@@ -119,8 +420,9 @@
                 </tr>
             </table>
         </div>
+
     </section>
-    
+        
     <section id="submission-info">
         <div class="container">
             <h2>Submission Information</h2>
@@ -150,121 +452,18 @@
         </div>
     </section>
 
-    <section id="speakers">
-        <div class="container">
-            <h2>Keynote Speakers</h2>
-            <ul>
-                <li>TBD</li>
-                <li>TBD</li>
-                <li>TBD</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="schedule">
-        <div class="container">
-            <h2>Schedule (November 15th, 2024) (Tentative)</h2>
-            <table class="table table-striped table-hover">
-                <tr>
-                    <td>9 - 9:15 AM </td>
-                    <td>Opening Remarks</td>
-                </tr>
-                <tr>
-                    <td>9:15 - 10:00 AM</td>
-                    <td>Keynote: TBA</td>
-                </tr>
-                <tr>
-                    <td>10:00 - 10:30 AM</td>
-                    <td>Paper Presentations 1</td>
-                </tr>
-                <tr>
-                    <td>10:30 - 11:00 AM</td>
-                    <td>Coffee Break</td>
-                </tr>
-                <tr>
-                    <td>11:00 - 12:30 PM</td>
-                    <td>Paper Presentations 2</td>
-                </tr>
-                <tr>
-                    <td>12:30 PM - 14:15 PM</td>
-                    <td>Lunch</td>
-                </tr>
-                <tr>
-                    <td>14:15 PM - 15:00 PM</td>
-                    <td>Keynote: TBA</td>
-                </tr>
-                <tr>
-                    <td>15:00 PM - 15:30 PM</td>
-                    <td>Paper Presentations 3</td>
-                </tr>
-                <tr>
-                    <td>15:30 PM - 16:00 PM</td>
-                    <td>Coffee Break</td>
-                </tr>
-                <tr>
-                    <td>16:00 PM - 16:45 PM</td>
-                    <td>Panel</td>
-                </tr>
-                <tr>
-                    <td>16:45 PM - 17:00 PM</td>
-                    <td>Concluding Remarks</td>
-                </tr>
-            </table>
-        </div>
-    </section>
-
-    <section id="organizers">
-        <div class="container text-center">
-            <div class="row align-items-start">
-                <div class="span12">
-                    <h2>Organizers</h2>
-                </div>
-            </div>
-            <div class="row align-items-start">
-              <div class="col-3">
-                <center>
-                <figure>
-                    <img src="assets/images/joel.jpg" width="200px" height="200px">
-                    <figcaption style="text-align:center">Joel Tetreault</figcaption>
-                </figure>    
-                </center>
-              </div>
-              <div class="col-3">
-                <center>
-                <figure>
-                    <img src="assets/images/thien.png" width="200px" height="200px">
-                    <figcaption style="text-align:center">Thien Huu Nguyen</figcaption>
-                </figure>
-                </center>
-              </div>
-              <div class="col-6">
-                <center>
-                    <figure>
-                        <img src="assets/images/hemank.jpg" width="200px" height="200px">
-                        <figcaption style="text-align:center">Hemank Lamba</figcaption>
-                    </figure>    
-                </center>
-              </div>
-              <div class="col-6">
-                <center>
-                    <figure>
-                        <img src="assets/images/amanda.jpg" width="200px" height="200px">
-                        <figcaption style="text-align:center">Amanda Hughes</figcaption>
-                    </figure>
-                </center>
-              </div>
-            </div>
-          </div>
-    </section>
-
-    
 
     <section id="contact">
         <div class="container">
+            <h2>Twitter:</h2>
+            <p>
+                <a href="https://x.com/FuturED2024">https://x.com/FuturED2024</a></h2>
+            </p>
             <h2>Contact Details</h2>
             <p>
                 Please reach out at: <a href="mailto:futureofeventdetection@googlegroups.com">futureofeventdetection@googlegroups.com</a>.<br> 
             </p>
+            
         </div>
     </section>
 
@@ -272,6 +471,19 @@
     <footer>
         <p>© 2024 EMNLP Workshop. All rights reserved.</p>
     </footer>
+    
+    <script>
+        function toggleBio(bioId) {
+            var bioContent = document.getElementById(bioId);
+            if (bioContent.style.display === "block") {
+                bioContent.style.display = "none";
+            } else {
+                bioContent.style.display = "block";
+            }
+        }
+    </script>
+    
 </body>
+
 </html>
 
